@@ -11,3 +11,4 @@ from webdriver_manager.chrome import ChromeDriverManager
 driver =  webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 driver.get("https://www.google.com")
 
+print(driver.title)  # Get and print window title
