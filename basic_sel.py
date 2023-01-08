@@ -17,14 +17,16 @@ from webdriver_manager.chrome import ChromeDriverManager
 driver =  webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 driver.get("https://www.google.com")
 
-print(driver.title)  # Get and print window title
+print(driver.title)  # Current window title
+print(driver.current_url)  # Current URL
 driver.close()
 
 
 # select second web site
 driver =  webdriver.Chrome(service=Service(ChromeDriverManager().install()))  # Must repeat driver setting else fails here
 driver.get("https://techwithtim.net")
-print(driver.title)
+print(driver.title)  # Current window title
+print(driver.current_url)  # Current URL
 driver.quit()
 
 
