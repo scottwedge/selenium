@@ -27,6 +27,11 @@ driver =  webdriver.Chrome(service=Service(ChromeDriverManager().install()))  # 
 driver.get("https://techwithtim.net")
 print(driver.title)  # Current window title
 print(driver.current_url)  # Current URL
+
+search_string = "Tutorials"  # Define string to search for
+src = driver.page_source  # Capture all page source
+print("Search string found in page source = ",search_string in src)  # Booleans result if search string found in page
+
 driver.quit()
 
 
