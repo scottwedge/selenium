@@ -21,7 +21,7 @@ element_by_id = driver.find_element(By.ID, "user-message")
 
 # Enter text into the element using ".send_keys" 
 element_by_id.send_keys("Hello there. The time is: ", time.asctime())
-time.sleep(10)  # Pause so can examine if textbox has entered values
+time.sleep(5)  # Pause so can examine if textbox has entered values
 
 
 # Need to select button with text label of "Show Message"
@@ -31,7 +31,33 @@ time.sleep(10)  # Pause so can examine if textbox has entered values
 xpath_1 = '//button[@class="btn btn-default"]'  # This selects the first of two buttons
 xpath_2 = '//*[@type="button" and @onclick="showInput();"]'  # This only selects the first button
 
+show_message_button = driver.find_element(By.XPATH, xpath_1)
+show_message_button.click()  # Then click on the button
+time.sleep(5)  # Pause so can examine if click has caused value to be displayed
+
+
+# Create known text string then verify that it is displayed (instead of always changing time)
+known_text_string = "Match this string 123"
+
+# re-use element with id="user-message" after clear field
+element_by_id.clear()
+# Enter text into the element using ".send_keys" 
+element_by_id.send_keys(known_text_string)
+time.sleep(5)  # Pause so can examine if textbox has entered values
+
+
+# Use xpath_2 path
 show_message_button = driver.find_element(By.XPATH, xpath_2)
 show_message_button.click()  # Then click on the button
-time.sleep(10)  # Pause so can examine if click has caused value to be displayed
+time.sleep(5)  # Pause so can examine if click has caused value to be displayed
+
+
+# Then verify that the enter text is actually displayed
+element_by_id_2 = driver.find_element(By.ID, "display")
+
+print("This is element: ", element_by_id_2)
+time.sleep(5)  # Pause so can examine if click has caused value to be displayed
+
+# NEW: element.text to display text value of element
+print(element_by_id_2.text)
 
