@@ -33,3 +33,22 @@ time.sleep(10)
 #print(dir(button_id))  #DEBUG
 print(button_id.get_attribute("value"))  # This value should be "Uncheck All"
 
+# Uniquely identify the four different checkboxes
+box_1 = "//label[text() = 'Option 1']"
+box_2 = "//label[text() = 'Option 2']"
+box_3 = "//label[text() = 'Option 3']"
+box_4 = "//label[text() = 'Option 4']"
+time.sleep(1)
+checkbox_1 = driver.find_element(By.XPATH, box_1)
+checkbox_1.click()
+time.sleep(1)
+checkbox_2 = driver.find_element(By.XPATH, box_2)
+checkbox_2.click()
+time.sleep(1)
+checkbox_3 = driver.find_element(By.XPATH, box_3)
+checkbox_3.click()
+time.sleep(1)
+checkbox_4 = driver.find_element(By.XPATH, box_4)
+checkbox_4.click()
+
+time.sleep(10)
