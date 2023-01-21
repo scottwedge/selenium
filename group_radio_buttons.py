@@ -47,5 +47,12 @@ age_button_0_to_5.click()
 # Select the "Get values" button
 get_values_button.click()
 
+time.sleep(10)
+
+# Check output is correct
+result = driver.find_element(By.CLASS_NAME, "groupradiobutton")
+print(result)
+print(result.text)
 
 time.sleep(10)
+
