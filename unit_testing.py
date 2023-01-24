@@ -10,10 +10,13 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 # Functions
-def single_input_field(msg):
-    id = "user-message"
-    enter_message_box = driver.find_element(By.ID, id)
+#def single_input_field(msg):
+#    id = "user-message"
+#    enter_message_box = driver.find_element(By.ID, id)
 
+class TestWebPage(unittest.TestCase):
+    def test_single_input_field(self):
+        self.assertTrue(True)
 
 # launch Chrome browser
 driver =  webdriver.Chrome(service=Service(ChromeDriverManager().install()))
