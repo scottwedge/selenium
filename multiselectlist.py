@@ -7,7 +7,9 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support.select import Select
 
+# Work on the Select List Demo pulldown list (states)
 
 # Use the demo.seleniumeasy.com site with all of its practice pages
 # 1. Input forms - Radio buttons in Input Forms
@@ -18,8 +20,13 @@ driver =  webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 driver.get(web_site)
 
 # Select one of the values in the multi select list
-id = "multi-select"
-driver.find_element(By.ID, id)
+name = "States"
+sel = Select(driver.find_element(By.NAME, name))
+print(sel)
 
-time.sleep(10)
+time.sleep(5)
 
+# Select a state
+sel.select_by_visible_text("California")
+
+time.sleep(5)
