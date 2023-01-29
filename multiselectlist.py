@@ -19,14 +19,27 @@ web_site = "http://demo.seleniumeasy.com/basic-select-dropdown-demo.html"
 driver =  webdriver.Chrome(service=Service(ChromeDriverManager().install()))  
 driver.get(web_site)
 
-# Select one of the values in the multi select list
+# Select each of the values in the multi select list by index
 name = "States"
 sel = Select(driver.find_element(By.NAME, name))
-print(sel)
-
-time.sleep(5)
+print(sel.select_by_index(0))
+time.sleep(1)
+print(sel.select_by_index(1))
+time.sleep(1)
+print(sel.select_by_index(2))
+time.sleep(1)
+print(sel.select_by_index(3))
+time.sleep(1)
+print(sel.select_by_index(4))
+time.sleep(1)
+print(sel.select_by_index(5))
+time.sleep(1)
+print(sel.select_by_index(6))
+time.sleep(1)
+print(sel.select_by_index(7))
+time.sleep(1)
 
 # Select a state
-sel.select_by_visible_text("California")
+#sel.select_by_visible_text("California")
 
 time.sleep(5)
