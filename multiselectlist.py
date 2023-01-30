@@ -22,21 +22,19 @@ driver.get(web_site)
 # Select each of the values in the multi select list by index
 name = "States"
 sel = Select(driver.find_element(By.NAME, name))
-print(sel.select_by_index(0))
+
+# DEBUG
+#print(dir(sel))  # options for sel
+# 'all_selected_options', 'deselect_all', 'deselect_by_index', 
+# 'deselect_by_value', 'deselect_by_visible_text', 'first_selected_option', 
+# 'is_multiple', 'options', 'select_by_index', 'select_by_value', 
+# 'select_by_visible_text']
+
+
+
+sel.select_by_visible_text("Florida")
 time.sleep(1)
-print(sel.select_by_index(1))
-time.sleep(1)
-print(sel.select_by_index(2))
-time.sleep(1)
-print(sel.select_by_index(3))
-time.sleep(1)
-print(sel.select_by_index(4))
-time.sleep(1)
-print(sel.select_by_index(5))
-time.sleep(1)
-print(sel.select_by_index(6))
-time.sleep(1)
-print(sel.select_by_index(7))
+sel.select_by_visible_text("Texas")
 time.sleep(1)
 
 # Select a state
