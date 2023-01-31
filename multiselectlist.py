@@ -32,6 +32,7 @@ sel = Select(driver.find_element(By.NAME, name))
 
 # list of states in order:
 # California, Florida, New Jersey, New York, Ohio, Texas, Pennsylvania, Washington
+list_of_states = ["California", "Florida", "New Jersey", "New York", "Ohio", "Texas", "Pennsylvania", "Washington"]
 
 sel.select_by_visible_text("Florida")
 time.sleep(1)
