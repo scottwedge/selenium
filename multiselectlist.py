@@ -2,6 +2,7 @@
 
 # Imports
 import time
+import random
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -33,6 +34,12 @@ sel = Select(driver.find_element(By.NAME, name))
 # list of states in order:
 # California, Florida, New Jersey, New York, Ohio, Texas, Pennsylvania, Washington
 list_of_states = ["California", "Florida", "New Jersey", "New York", "Ohio", "Texas", "Pennsylvania", "Washington"]
+length_of_list = len(list_of_states)
+
+# Select random value from list
+index = random.randrange(0,length_of_list + 1)
+state = list_of_states[index]
+print("Random state is", state)
 
 sel.select_by_visible_text("Florida")
 time.sleep(1)
