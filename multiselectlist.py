@@ -53,6 +53,19 @@ sel.select_by_visible_text(state)
 first_selected_button_id = "printMe"
 driver.find_element(By.ID, first_selected_button_id).click()
 
+
+# Verify that the output text matches the selected state
+output_class = "getall-selected"
+
+#print(dir(driver))  #DEBUG
+#print(dir(By))  #DEBUG
+
+
+button_id = "//*[@class='getall-selected']"
+
+result_text = driver.find_element(By.XPATH, button_id).text
+print(result_text)
+
 # Select a state
 #sel.select_by_visible_text("California")
 
