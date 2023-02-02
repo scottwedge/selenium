@@ -35,16 +35,23 @@ sel = Select(driver.find_element(By.NAME, name))
 # California, Florida, New Jersey, New York, Ohio, Texas, Pennsylvania, Washington
 list_of_states = ["California", "Florida", "New Jersey", "New York", "Ohio", "Texas", "Pennsylvania", "Washington"]
 length_of_list = len(list_of_states)
+print("Length of states list",list_of_states, "is", length_of_list)
+
 
 # Select random value from list
-index = random.randrange(0,length_of_list + 1)
+index = random.randrange(0,length_of_list)
 state = list_of_states[index]
 print("Random state is", state)
+sel.select_by_visible_text(state)
 
-sel.select_by_visible_text("Florida")
-time.sleep(1)
-sel.select_by_visible_text("Texas")
-time.sleep(1)
+# sel.select_by_visible_text("Florida")
+# time.sleep(1)
+# sel.select_by_visible_text("Texas")
+# time.sleep(1)
+
+# Check the contents after select the "First Selected" button
+first_selected_button_id = "printMe"
+driver.find_element(By.ID, first_selected_button_id).click()
 
 # Select a state
 #sel.select_by_visible_text("California")
