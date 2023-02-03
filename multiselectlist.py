@@ -68,7 +68,10 @@ button_id = "//*[@class='getall-selected']"
 result_text = driver.find_element(By.XPATH, button_id).text
 print(result_text)
 
-# Select a state
-#sel.select_by_visible_text("California")
+# Verify state in output text
+if state in result_text:
+    print("State", state, "is in text", result_text)
+else:
+    print("ERROR State", state, "is in text", result_text)
 
 time.sleep(5)
