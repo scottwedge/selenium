@@ -39,7 +39,9 @@ print("Length of states list",list_of_states, "is", length_of_list)
 
 
 # Select random value from list
-index = random.randrange(0,length_of_list)
+index = random.randint(0,length_of_list - 1)
+print("Index =", index)
+
 state = list_of_states[index]
 print("Random state is", state)
 sel.select_by_visible_text(state)
