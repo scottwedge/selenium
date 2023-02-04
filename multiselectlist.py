@@ -74,14 +74,19 @@ if state in result_text:
 else:
     print("ERROR State", state, "is in text", result_text)
 
+time.sleep(5)
 
 # Select second state and verify output is correct
 # Select random value from list for second state
 second_index = random.randint(0,length_of_list - 1)
 print("Index =", second_index)
 second_state = list_of_states[second_index]
-print("Random state is", second_state)
+print("Second random state is", second_state)
 sel.select_by_visible_text(second_state)
+
+# Select the "Get All Selected" button and click it
+get_all_selected_button_id = "printAll"
+driver.find_element(By.ID, get_all_selected_button_id).click()
 
 
 time.sleep(5)
