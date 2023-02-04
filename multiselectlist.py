@@ -74,4 +74,14 @@ if state in result_text:
 else:
     print("ERROR State", state, "is in text", result_text)
 
+
+# Select second state and verify output is correct
+# Select random value from list for second state
+second_index = random.randint(0,length_of_list - 1)
+print("Index =", second_index)
+second_state = list_of_states[second_index]
+print("Random state is", second_state)
+sel.select_by_visible_text(second_state)
+
+
 time.sleep(5)
