@@ -24,12 +24,6 @@ driver.get(web_site)
 name = "States"
 sel = Select(driver.find_element(By.NAME, name))
 
-# DEBUG
-#print(dir(sel))  # options for sel
-# 'all_selected_options', 'deselect_all', 'deselect_by_index', 
-# 'deselect_by_value', 'deselect_by_visible_text', 'first_selected_option', 
-# 'is_multiple', 'options', 'select_by_index', 'select_by_value', 
-# 'select_by_visible_text']
 
 # list of states in order:
 # California, Florida, New Jersey, New York, Ohio, Texas, Pennsylvania, Washington
@@ -52,15 +46,24 @@ sel.select_by_visible_text(state)
 # time.sleep(1)
 
 # Check the contents after select the "First Selected" button
+
+# List of IDs:
 first_selected_button_id = "printMe"
+get_all_selected_button_id = "//*[@id='printAll']"
+
+
 driver.find_element(By.ID, first_selected_button_id).click()
 
+# Try to unclick button - no such option
+# driver.find_element(By.ID, first_selected_button_id).unclick()
 
 # Verify that the output text matches the selected state
 output_class = "getall-selected"
 
-#print(dir(driver))  #DEBUG
-#print(dir(By))  #DEBUG
+# DEBUG
+print(dir(driver))  #DEBUG
+print(dir(By))  #DEBUG
+print(dir(Select))  #DEBUG
 
 
 button_id = "//*[@class='getall-selected']"
@@ -85,8 +88,8 @@ print("Second random state is", second_state)
 sel.select_by_visible_text(second_state)
 
 # Select the "Get All Selected" button and click it
-get_all_selected_button_id = "printAll"
-driver.find_element(By.ID, get_all_selected_button_id).click()
+get_all_selected_button_id = "//*[@id='printAll']"
+driver.find_element(By.XPATH, get_all_selected_button_id).click()
 
 
-time.sleep(5)
+time.sleep(10)
