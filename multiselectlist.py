@@ -40,10 +40,14 @@ state = list_of_states[index]
 print("Random state is", state)
 sel.select_by_visible_text(state)
 
-# sel.select_by_visible_text("Florida")
-# time.sleep(1)
-# sel.select_by_visible_text("Texas")
-# time.sleep(1)
+sel.select_by_visible_text("Florida")
+time.sleep(1)
+sel.select_by_visible_text("Texas")
+time.sleep(10)
+
+# Try unselect all
+sel.deselect_all()
+time.sleep(10)
 
 # Check the contents after select the "First Selected" button
 
